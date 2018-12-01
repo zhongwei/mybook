@@ -33,9 +33,16 @@ network:
     version: 2
 #sudo netplan apply
 ```
-- Ubuntu 18.04 修改主机名
+- 修改主机名
+
 ```shell
-sudo vi /etc/cloud/cloud.cfg # **preserve_hostname** value change to **true**
+sudo vi /etc/cloud/cloud.cfg # preserve_hostname  value change to  true
 sudo hostnamectl set-hostname zhongwei-ubuntu
+```
+- 创建sudo用户
+
+```shell
+sudo adduser zhongwei
+sudo usermod -aG sudo zhongwei
 ```
   
