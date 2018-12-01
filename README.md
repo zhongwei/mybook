@@ -23,7 +23,6 @@ network:
             addresses:
             - 192.168.99.100/24
             dhcp4: false
-            gateway4: 192.168.99.1
             nameservers:
                 addresses: []
                 search: []
