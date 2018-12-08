@@ -144,7 +144,13 @@ vi ~/.zshrc #ZSH_THEME="powerlevel9k/powerlevel9k"
 
 ```shell
     source ~/.zshrc
+```
 
+- Use Ligature Support(FiraCode Font) 
+
+```shell
+git clone https://github.com/tonsky/FiraCode
+# Navigate to ITerm2 | Preferences | Profiles | Text => change font to Fira Code Regular
 ```
 
 - Install Nodejs
