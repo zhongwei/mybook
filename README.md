@@ -105,33 +105,34 @@ vi ~/.zshrc #ZSH_THEME="powerlevel9k/powerlevel9k"
 
 - 配置powerline
 
-    [Show-Off-Your-Config](http://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config)
-    color: https://jonasjacek.github.io/colors/
+```shell
+# [Show-Off-Your-Config](http://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config)
+#  color: https://jonasjacek.github.io/colors/
 
-    POWERLEVEL9K_CUSTOM_PYTHON="echo -n '\ue235' Python"
-    POWERLEVEL9K_CUSTOM_PYTHON_FOREGROUND="black"
-    POWERLEVEL9K_CUSTOM_PYTHON_BACKGROUND="blue"
+POWERLEVEL9K_CUSTOM_PYTHON="echo -n '\ue235' Python"
+POWERLEVEL9K_CUSTOM_PYTHON_FOREGROUND="black"
+POWERLEVEL9K_CUSTOM_PYTHON_BACKGROUND="blue"
 
-    POWERLEVEL9K_CUSTOM_JAVASCRIPT="echo -n '\ue781' JavaScript"
-    POWERLEVEL9K_CUSTOM_JAVASCRIPT_FOREGROUND="black"
-    POWERLEVEL9K_CUSTOM_JAVASCRIPT_BACKGROUND="yellow"
+POWERLEVEL9K_CUSTOM_JAVASCRIPT="echo -n '\ue781' JavaScript"
+POWERLEVEL9K_CUSTOM_JAVASCRIPT_FOREGROUND="black"
+POWERLEVEL9K_CUSTOM_JAVASCRIPT_BACKGROUND="yellow"
 
-    POWERLEVEL9K_CUSTOM_RUBY="echo -n '\ue21e' Ruby"
-    POWERLEVEL9K_CUSTOM_RUBY_FOREGROUND="black"
-    POWERLEVEL9K_CUSTOM_RUBY_BACKGROUND="red"
+POWERLEVEL9K_CUSTOM_RUBY="echo -n '\ue21e' Ruby"
+POWERLEVEL9K_CUSTOM_RUBY_FOREGROUND="black"
+POWERLEVEL9K_CUSTOM_RUBY_BACKGROUND="red"
 
-    POWERLEVEL9K_CUSTOM_RUST="echo -n '\ue7a8' Rust"
-    POWERLEVEL9K_CUSTOM_RUST_FOREGROUND="black"
-    POWERLEVEL9K_CUSTOM_RUST_BACKGROUND="magenta"
+POWERLEVEL9K_CUSTOM_RUST="echo -n '\ue7a8' Rust"
+POWERLEVEL9K_CUSTOM_RUST_FOREGROUND="black"
+POWERLEVEL9K_CUSTOM_RUST_BACKGROUND="magenta"
 
-    POWERLEVEL9K_CUSTOM_GO="echo -n '\ue724' Go"
-    POWERLEVEL9K_CUSTOM_GO_FOREGROUND="Links"
-    POWERLEVEL9K_CUSTOM_GO_BACKGROUND="blue"
-    POWERLEVEL9K_VCS_GIT_GITHUB_ICON="\uf09b"
+POWERLEVEL9K_CUSTOM_GO="echo -n '\ue724' Go"
+POWERLEVEL9K_CUSTOM_GO_FOREGROUND="Links"
+POWERLEVEL9K_CUSTOM_GO_BACKGROUND="blue"
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON="\uf09b"
 
-    POWERLEVEL9K_HOME_ICON="\uf015"
-
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs custom_rust custom_go custom_python custom_javascript custom_ruby)
+POWERLEVEL9K_HOME_ICON="\uf015"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs custom_rust custom_go custom_python custom_javascript custom_ruby)
+```
 
 - 配置 zsh-syntax-highlighting and ZSH-AutoSuggestion
 
@@ -196,4 +197,33 @@ pip3 install tensorflow
 ```shell
 pip3 install jupyterlab
 vi .zprofile # 添加./local/bin到PATH变量
+```
+
+## Docker book
+
+- Create portainer container
+```shell
+docker container run --name portainer --restart always -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -d portainer/portainer
+```
+
+- Create redis container and web manage tools
+```shell
+docker container run --name redis --restart always -p 6379:6379 -v /home/zhongwei/data/redis:/data -d redis:alpine 
+docker container run --name redis-commander --restart always -p 8063:8081 --env REDIS_HOSTS=10.105.201.248 -d rediscommander/redis-commander
+```
+
+- Create mongo container and web manage tools
+```shell
+docker container run --name mongo --restart always -p 27017:27017 -v /home/zhongwei/data/mongo:/data/db -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=zhongwei -d mongo
+docker container run --name mongo-express --restart always -p 8081:8081 -e ME_CONFIG_MONGODB_SERVER=10.105.201.248 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=zhongwei -d mongo-express
+```
+
+- Create rabbitmq container 
+```shell
+docker container run --name rabbitmq --restart always --hostname rabbitmq -p 15672:15672 -p 5672:5672 -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=zhongwei -d rabbitmq:management-alpine
+```
+
+- Create registry container
+```shell
+docker container run --name registry --restart always -p 5000:5000 -d registry
 ```
