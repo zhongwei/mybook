@@ -63,6 +63,11 @@ sudo dpkg -i dive_0.4.0_linux_amd64.deb
 sudo apt install nnn
 sudo apt install mc -y
 wget https://github.com/jesseduffield/lazygit/releases/download/v0.5/lazygit_0.5_Linux_x86_64.tar.gz
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+sudo sh -c "curl https://raw.githubusercontent.com/mrowa44/emojify/master/emojify -o /usr/local/bin/emojify && chmod +x /usr/local/bin/emojify"
+emojify "Hey, I just :raising_hand: you, and this is :scream: , but here's my :calling: , so :telephone_receiver: me, maybe?"
+emojify "To :bee: , or not to :bee: : that is the question... To take :muscle: against a :ocean: of troubles, and by opposing, end them?"
 
 ```
 
