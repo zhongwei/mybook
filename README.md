@@ -133,12 +133,19 @@ vi ~/.zshrc #ZSH_THEME="powerlevel9k/powerlevel9k"
   Oh-my-zsh
 
 1. Clone this repository in oh-my-zsh's plugins directory:
+
+```shell
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
 2. Activate the plugin in `~/.zshrc`:
     plugins=( [plugins...] zsh-syntax-highlighting zsh-autosuggestions)
 3. Source `~/.zshrc`  to take changes into account:
+
+```shell
     source ~/.zshrc
+
+```
 
 - Install Nodejs
 
@@ -151,6 +158,7 @@ sudo apt-get install -y nodejs
 
 ```shell
 curl https://sh.rustup.rs -sSf | sh
+cargo install bat lsd exa fd xsv tokei ripgrep genact hyperfine
 ```
 
 #### Emacs config
