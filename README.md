@@ -128,14 +128,15 @@ vi ~/.zshrc #ZSH_THEME="powerlevel9k/powerlevel9k"
 
     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs custom_rust custom_go custom_python custom_javascript custom_ruby)
 
-- 配置 zsh-syntax-highlighting
+- 配置 zsh-syntax-highlighting and ZSH-AutoSuggestion
 
   Oh-my-zsh
 
 1. Clone this repository in oh-my-zsh's plugins directory:
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 2. Activate the plugin in `~/.zshrc`:
-    plugins=( [plugins...] zsh-syntax-highlighting)
+    plugins=( [plugins...] zsh-syntax-highlighting zsh-autosuggestions)
 3. Source `~/.zshrc`  to take changes into account:
     source ~/.zshrc
 
