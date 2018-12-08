@@ -51,6 +51,21 @@ sudo adduser zhongwei
 sudo usermod -aG sudo zhongwei
 ```
 
+- 安装常用工具
+
+```shell
+sudo apt install python3-pip -y
+sudo apt install sl
+wget https://github.com/sharkdp/bat/releases/download/v0.9.0/bat_0.9.0_amd64.deb
+sudo dpkg -i bat_0.9.0_amd64.deb
+wget https://github.com/wagoodman/dive/releases/download/v0.4.0/dive_0.4.0_linux_amd64.deb
+sudo dpkg -i dive_0.4.0_linux_amd64.deb
+sudo apt install nnn
+sudo apt install mc -y
+wget https://github.com/jesseduffield/lazygit/releases/download/v0.5/lazygit_0.5_Linux_x86_64.tar.gz
+
+```
+
 - 安装docker
 
 ```shell
@@ -135,4 +150,30 @@ sudo apt-get install -y nodejs
 
 ```shell
 curl https://sh.rustup.rs -sSf | sh
+```
+
+#### Emacs config
+
+```shell
+sudo apt install -y emacs
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+git clone https://github.com/zhongwei/.spacemacs.d ~/.spacemacs.d
+```
+
+## Tensorflow
+
+### Install
+
+```shell
+sudo apt install python3-pip -y
+pip3 install tensorflow
+```
+
+## JupyterLab
+
+### Install
+
+```shell
+pip3 install jupyterlab
+vi .zprofile # 添加./local/bin到PATH变量
 ```
