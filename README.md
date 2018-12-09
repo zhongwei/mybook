@@ -68,7 +68,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 sudo sh -c "curl https://raw.githubusercontent.com/mrowa44/emojify/master/emojify -o /usr/local/bin/emojify && chmod +x /usr/local/bin/emojify"
 emojify "Hey, I just :raising_hand: you, and this is :scream: , but here's my :calling: , so :telephone_receiver: me, maybe?"
 emojify "To :bee: , or not to :bee: : that is the question... To take :muscle: against a :ocean: of troubles, and by opposing, end them?"
-
+wget https://github.com/yudai/gotty/releases/download/v2.0.0-alpha.3/gotty_2.0.0-alpha.3_linux_amd64.tar.gz
+gotty -w docker run -it --rm busybox
 ```
 
 - 安装docker
@@ -208,13 +209,13 @@ docker container run --name portainer --restart always -p 9000:9000 -v /var/run/
 
 - Create redis container and web manage tools
 ```shell
-docker container run --name redis --restart always -p 6379:6379 -v /home/zhongwei/data/redis:/data -d redis:alpine 
+docker container run --name redis --restart always -p 6379:6379 -v ~/data/redis:/data -d redis:alpine 
 docker container run --name redis-commander --restart always -p 8063:8081 --env REDIS_HOSTS=10.105.201.248 -d rediscommander/redis-commander
 ```
 
 - Create mongo container and web manage tools
 ```shell
-docker container run --name mongo --restart always -p 27017:27017 -v /home/zhongwei/data/mongo:/data/db -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=zhongwei -d mongo
+docker container run --name mongo --restart always -p 27017:27017 -v ~/data/mongo:/data/db -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=zhongwei -d mongo
 docker container run --name mongo-express --restart always -p 8081:8081 -e ME_CONFIG_MONGODB_SERVER=10.105.201.248 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=zhongwei -d mongo-express
 ```
 
@@ -226,4 +227,16 @@ docker container run --name rabbitmq --restart always --hostname rabbitmq -p 156
 - Create registry container
 ```shell
 docker container run --name registry --restart always -p 5000:5000 -d registry
+```
+
+- Create mysql container and web manage tools
+```shell
+docker container run --name mysql  --restart always --user "$(id -u):$(id -g)" -p 3306:3306 -v ~/data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=zhongwei -e MYSQL_PASSWORD=zhongwei -e MYSQL_DATABASE=demo  -d mysql --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+docker container run --name phpmyadmin --restart always -p 8033:80 -e PMA_ARBITRARY=1 -d phpmyadmin/phpmyadmin
+```
+
+- Create postgres container and web manage tools
+```shell
+docker container run --name postgres --restart always --user "$(id -u):$(id -g)" -p 5432:5432 -v ~/data/postgres:/var/lib/postgresql/data  -e POSTGRES_PASSWORD=zhongwei -d postgres
+docker container run --name pgadmin4 --restart always -p 8054:80  -e PGADMIN_DEFAULT_EMAIL=zhongwei99@163.com -e PGADMIN_DEFAULT_PASSWORD=zhongwei -d dpage/pgadmin4
 ```
