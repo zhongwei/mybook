@@ -2,11 +2,12 @@
 
 * zgo
   * go.mod
-    * [ ] CLI
+    * [x] CLI
+    * [ ] YAML
     * [ ] GraphQL
-    * [ ] MySQL
-    * [ ] Postgres
-    * [ ] SQLite
+    * [x] MySQL
+    * [x] Postgres
+    * [x] SQLite
 
 * Learning Go
   * Go语言实战
