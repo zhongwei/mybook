@@ -174,6 +174,14 @@ curl https://sh.rustup.rs -sSf | sh
 cargo install bat lsd exa fd xsv tokei ripgrep genact hyperfine
 ```
 
+- Install Go
+
+```shell
+sudo tar -C /usr/local -xzf go1.11.4.linux-amd64.tar.gz
+vi .zprofile
+export PATH="/usr/local/go/bin:$HOME/.cargo/bin:$PATH:$HOME/.local/bin"
+```
+
 #### Emacs config
 
 ```shell
@@ -246,4 +254,8 @@ docker container run --name pgadmin4 --restart always -p 8054:80  -e PGADMIN_DEF
 docker container run --name nginx -p 80:80 -v ~/data/nginx/conf.d:/etc/nginx/conf.d:ro -v ~/data/nginx/html:/usr/share/nginx/html -d nginx:alpine
 docker exec nginx chmod 755 /usr/share/nginx/html
 docker container restart nginx
+```
+- Create drone container
+```shell
+docker container run --name drone --restart always -p 3001:80 -p 8443:443 -v /var/run/docker.sock:/var/run/docker.sock -v ~/data/drone:/data -e DRONE_GITEA_SERVER=10.105.201.248:3000 -e DRONE_GIT_ALWAYS_AUTH=false -e DRONE_RUNNER_CAPACITY=2 -e DRONE_SERVER_HOST=http://10.105.201.248 -e DRONE_SERVER_PROTO=http -e DRONE_TLS_AUTOCERT=false -d drone/drone
 ```
