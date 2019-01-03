@@ -4,6 +4,17 @@
 
 ### Linux Admin
 
+#### 离线安装Git 2.x
+
+``` shell
+yum install -y yum-plugin-downloadonly
+curl https://setup.ius.io | sh
+mkdir ~/yum-repo
+yum install --downloadonly --downloaddir=~/yum-repo/git2u git2u
+yum search git
+yum remove -y git | yum -y install git2u
+```
+
 #### Network Admin
 
 - 两块网卡时，修改路由表优先级
