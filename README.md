@@ -65,10 +65,7 @@ sudo usermod -aG sudo zhongwei
 - 安装常用工具
 
 ```shell
-sudo apt install python3-pip -y
 sudo apt install sl
-wget https://github.com/sharkdp/bat/releases/download/v0.9.0/bat_0.9.0_amd64.deb
-sudo dpkg -i bat_0.9.0_amd64.deb
 wget https://github.com/wagoodman/dive/releases/download/v0.4.0/dive_0.4.0_linux_amd64.deb
 sudo dpkg -i dive_0.4.0_linux_amd64.deb
 sudo apt install nnn
@@ -189,7 +186,7 @@ cargo install bat lsd exa fd xsv tokei ripgrep genact hyperfine
 
 ```shell
 sudo tar -C /usr/local -xzf go1.11.4.linux-amd64.tar.gz
-vi .zprofile
+vi ~/.zprofile
 export PATH="/usr/local/go/bin:$HOME/.cargo/bin:$PATH:$HOME/.local/bin"
 ```
 
@@ -216,7 +213,7 @@ pip3 install tensorflow
 
 ```shell
 pip3 install jupyterlab
-vi .zprofile # 添加./local/bin到PATH变量
+vi ~/.zprofile # 添加./local/bin到PATH变量
 ```
 
 ## Docker book
