@@ -65,11 +65,9 @@ sudo usermod -aG sudo zhongwei
 - 安装常用工具
 
 ```shell
-sudo apt install sl
+sudo apt install sl nnn mc -y
 wget https://github.com/wagoodman/dive/releases/download/v0.4.0/dive_0.4.0_linux_amd64.deb
 sudo dpkg -i dive_0.4.0_linux_amd64.deb
-sudo apt install nnn
-sudo apt install mc -y
 wget https://github.com/jesseduffield/lazygit/releases/download/v0.5/lazygit_0.5_Linux_x86_64.tar.gz
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
