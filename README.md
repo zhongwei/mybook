@@ -103,7 +103,7 @@ vi ~/.zshrc #ZSH_THEME="agnoster"
 git clone https://github.com/ryanoasis/nerd-fonts
 cd nerd-fonts && ./install.sh
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-vi ~/.zshrc #ZSH_THEME="powerlevel9k/powerlevel9k"
+vi ~/.zshrc #POWERLEVEL9K_MODE='nerdfont-complete' ZSH_THEME="powerlevel9k/powerlevel9k"
 ```
 
     [nerd-fonts cheat-sheet](http://nerdfonts.com/#cheat-sheet)
