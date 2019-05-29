@@ -271,5 +271,5 @@ docker container run --name jenkins --restart always -p 8080:8080 -p 50000:50000
 ```
 - Create Gitlab container 
 ```shell
-docker container rune --name gitlab -p 8929:80 -p 2289:22 -v /data/gitlab/config:/etc/gitlab -v /data/gitlab/logs:/var/log/gitlab -v /data/gitlab/data:/var/opt/gitlab -d gitlab/gitlab-c
+docker container rune --name gitlab -p 8929:80 -p 2289:22 -v /data/gitlab/config:/etc/gitlab -v /data/gitlab/logs:/var/log/gitlab -v /data/gitlab/data:/var/opt/gitlab -d gitlab/gitlab-ce
 ```
