@@ -265,3 +265,7 @@ docker container restart nginx
 ```shell
 docker container run --name drone --restart always -p 3001:80 -p 8443:443 -v /var/run/docker.sock:/var/run/docker.sock -v ~/data/drone:/data -e DRONE_GITEA_SERVER=10.105.201.248:3000 -e DRONE_GIT_ALWAYS_AUTH=false -e DRONE_RUNNER_CAPACITY=2 -e DRONE_SERVER_HOST=http://10.105.201.248 -e DRONE_SERVER_PROTO=http -e DRONE_TLS_AUTOCERT=false -d drone/drone
 ```
+- Create Jenkins container 
+```shell
+docker container run --name jenkins --restart always -p 8080:8080 -p 50000:50000 -v ~/data/jenkins:/var/jenkins_home  -d jenkins/jenkins 
+```
