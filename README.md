@@ -251,7 +251,7 @@ docker container run --name phpmyadmin --restart always -p 8033:80 -e PMA_ARBITR
 
 - Create postgres container and web manage tools
 ```shell
-docker container run --name postgres --restart always --user "$(id -u):$(id -g)" -p 5432:5432 -v ~/data/postgres:/var/lib/postgresql/data  -e POSTGRES_PASSWORD=zhongwei -d postgres
+docker container run --name postgres --restart always --user "$(id -u):$(id -g)" -p 5432:5432 -v ~/data/postgres:/var/lib/postgresql/data  -e POSTGRES_PASSWORD=zhongwei -d postgres:alpine
 docker container run --name pgadmin4 --restart always -p 8054:80  -e PGADMIN_DEFAULT_EMAIL=zhongwei99@163.com -e PGADMIN_DEFAULT_PASSWORD=zhongwei -d dpage/pgadmin4
 ```
 
