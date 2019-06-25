@@ -273,3 +273,9 @@ docker container run --name jenkins --restart always -p 8080:8080 -p 50000:50000
 ```shell
 docker container run --name gitlab -p 8989:80 -p 2289:22 -v ~/data/gitlab/config:/etc/gitlab -v ~/data/gitlab/logs:/var/log/gitlab -v ~/data/gitlab/data:/var/opt/gitlab -d gitlab/gitlab-ce
 ```
+
+- Create sonic container
+
+```shell
+docker container run --name sonic -p 1491:1491 -v ~/data/sonic/config.cfg:/etc/sonic.cfg -v ~/data/sonic/store/:/var/lib/sonic/store/ -d valeriansaliou/sonic:v1.2.0
+```
