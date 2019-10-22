@@ -66,7 +66,7 @@ sudo usermod -aG sudo zhongwei
 
 ```shell
 sudo apt install git curl sl nnn mc -y
-wget https://github.com/wagoodman/dive/releases/download/v0.7.2/dive_0.7.2_linux_amd64.deb
+wget https://github.com/wagoodman/dive/releases/download/v0.8.1/dive_0.8.1_linux_amd64.deb
 sudo dpkg -i dive_0.7.2_linux_amd64.deb
 wget https://github.com/jesseduffield/lazygit/releases/download/v0.5/lazygit_0.5_Linux_x86_64.tar.gz
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -181,7 +181,7 @@ git clone https://github.com/tonsky/FiraCode
 - Install Nodejs
 
 ```shell
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
