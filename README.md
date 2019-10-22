@@ -227,14 +227,30 @@ sudo apt install -y emacs
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 git clone https://github.com/zhongwei/.spacemacs.d ~/.spacemacs.d
 ```
+## Python
+
+```shell
+# $HOME/.config/pip/pip.conf
+[global]
+index-url = https://mirrors.ustc.edu.cn/pypi/web/simple
+format = columns
+sudo apt install python3-pip -y
+```
 
 ## Tensorflow
 
 ### Install
 
 ```shell
-sudo apt install python3-pip -y
 pip3 install tensorflow
+```
+
+## Pytorch
+
+### Install
+
+```shell
+pip3 install torch==1.3.0+cpu torchvision==0.4.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
 ## JupyterLab
