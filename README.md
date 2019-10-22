@@ -78,7 +78,19 @@ wget https://github.com/yudai/gotty/releases/download/v2.0.0-alpha.3/gotty_2.0.0
 gotty -w docker run -it --rm busybox
 ```
 
-- 安装docker
+
+- 自动安装docker
+
+```shell
+curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo usermod -aG docker zhongwei
+exit #退出用户，重新登录权限生效
+```
+
+- 手动下载安装docker
 
 ```shell
 wget https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64/containerd.io_1.2.0-1_amd64.deb
