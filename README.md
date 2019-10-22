@@ -260,6 +260,7 @@ pip3 install torch==1.3.0+cpu torchvision==0.4.1+cpu -f https://download.pytorch
 ```shell
 pip3 install jupyterlab
 vi ~/.zprofile # 添加./local/bin到PATH变量
+jupyter lab --ip=10.105.201.248
 ```
 
 ## Docker book
