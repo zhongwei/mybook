@@ -188,8 +188,28 @@ sudo apt-get install -y nodejs
 - Install Rust
 
 ```shell
-curl https://sh.rustup.rs -sSf | sh
-cargo install bat lsd exa fd xsv tokei ripgrep genact hyperfine
+# .profile
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+. ./.profile
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# $HOME/.cargo/config
+[source.crates-io]
+replace-with = 'ustc'
+
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+
+# registry = "https://mirrors.ustc.edu.cn/crates.io-index"
+
+# cargo/bin path activate
+. ./.profile
+
+apt install clang-8
+
+cargo install bat lsd exa fd-find xsv tokei ripgrep genact hyperfine
 ```
 
 - Install Go
