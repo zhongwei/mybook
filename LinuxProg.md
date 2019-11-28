@@ -106,3 +106,36 @@ file app
 
 ```
 
+## Linux API
+
+### Basic API
+
+```c
+off_t lseek(int fd, off_t offset, int whence);
+int stat(const char *pathname, struct stat *statbuf);
+int access(const char *pathname, int mode);
+int chmod(const char *pathname, mode_t mode);
+long int strtol(const char *nptr, char **endptr, int base);
+int chown(const char *pathname, uid_t owner, gid_t group);
+int truncate(const char *path, off_t length);
+int link(const char *oldpath, const char *newpath);
+int symlink(const char *target, const char *linkpath);
+ssize_t readlink(const char *pathname, char *buf, size_t bufsiz);
+int unlink(const char *pathname);
+int rename(const char *oldpath, const char *newpath);
+int chdir(const char *path);
+char *getcwd(char *buf, size_t size);
+int mkdir(const char *pathname, mode_t mode);
+int dup(int oldfd);
+int dup2(int oldfd, int newfd);
+int fcntl(int fd, int cmd, ... /* arg */ );
+```
+
+### C Library
+
+```c
+DIR *opendir(const char *name);
+struct dirent *readdir(DIR *dirp);
+int closedir(DIR *dirp);
+
+```
