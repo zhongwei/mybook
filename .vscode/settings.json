@@ -1,0 +1,33 @@
+{
+    "cSpell.words": [
+        "CFLAGS",
+        "CPPFLAGS",
+        "Iinclude",
+        "adduser",
+        "chmod",
+        "deluser",
+        "dpkg",
+        "fdisk",
+        "groupadd",
+        "ldconfig",
+        "lftp",
+        "libcalc",
+        "lisi",
+        "mkdir",
+        "mkfifo",
+        "nslookup",
+        "openssh",
+        "passwd",
+        "patsubst",
+        "ptype",
+        "qall",
+        "undisplay",
+        "useradd",
+        "userdel",
+        "vimrc",
+        "vsftpd",
+        "xvfz",
+        "zhang",
+        "zhangsan"
+    ]
+}
