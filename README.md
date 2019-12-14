@@ -4,6 +4,13 @@
 
 ### Linux Admin
 
+#### 生成证书
+
+```shell
+openssl req -x509 -nodes -newkey rsa:1024 -keyout private.key -out server.crt -days 365 -subj "/C=CN/ST=Shanghai/L=Shanghai/O=Global lib
+erty/OU=IT Department/CN=*"
+```
+
 #### 离线安装Git 2.x
 
 ``` shell
