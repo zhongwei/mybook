@@ -116,6 +116,8 @@ exit #退出用户，重新登录权限生效
 ```shell
 sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# 如果上面命令出现 curl: (7) Failed to connect to raw.github.com port 443: Connection refused 则使用下面的命令
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo apt install fonts-powerline
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 vi ~/.zshrc #ZSH_THEME="agnoster"
