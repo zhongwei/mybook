@@ -225,6 +225,10 @@ cargo install bat lsd exa fd-find xsv tokei ripgrep genact hyperfine
 sudo tar -C /usr/local -xzf go1.11.4.linux-amd64.tar.gz
 vi ~/.zprofile
 export PATH="/usr/local/go/bin:$HOME/.cargo/bin:$PATH:$HOME/.local/bin"
+export GOPROXY="https://goproxy.cn/"
+export GO111MODULE="on"
+source ~/.zprofile
+go env
 ```
 
 #### Emacs config
