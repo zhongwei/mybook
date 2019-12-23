@@ -195,10 +195,10 @@ sudo apt-get install -y nodejs
 - Install Rust
 
 ```shell
-# .profile
+# .zshrc
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
-. ./.profile
+. ./.zshrc
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -223,11 +223,11 @@ cargo install bat lsd exa fd-find xsv tokei ripgrep genact hyperfine
 
 ```shell
 sudo tar -C /usr/local -xzf go1.11.4.linux-amd64.tar.gz
-vi ~/.zprofile
+vi ~/.zshrc
 export PATH="/usr/local/go/bin:$HOME/.cargo/bin:$PATH:$HOME/.local/bin"
 export GOPROXY="https://goproxy.cn/"
 export GO111MODULE="on"
-source ~/.zprofile
+source ~/.zshrc
 go env
 ```
 
