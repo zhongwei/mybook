@@ -214,7 +214,7 @@ registry = "git://mirrors.ustc.edu.cn/crates.io-index"
 # cargo/bin path activate
 . ./.profile
 
-apt install clang-8
+apt install clang-8 build-essential -y
 
 cargo install bat lsd exa fd-find xsv tokei ripgrep genact hyperfine
 ```
