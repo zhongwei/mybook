@@ -68,6 +68,7 @@
         "strtol",
         "struct",
         "symlink",
+        "txpool",
         "undisplay",
         "useradd",
         "userdel",

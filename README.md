@@ -57,6 +57,12 @@ geth attach ipc:node1/geth.ipc
 # > admin.addPeer("enode://e65da810c663cf72447d1231989fdd0201d871d4c37fdbe3073ac9278a85f430c8844da02cbd296458a82779dd065aa58f60e5de1340f613c84c4712300c6eac@127.0.0.1:30302?discport=0")
 # > admin.peers
 # > eth.blockNumber
+# > personal.unlockAccount(eth.accounts[0])
+# > eth.sendTransaction({from: eth.account[0], to: "0x8f1a13e6edd6a48bcca7d1d610c1a5821449c2f1", value: web3.toWei(15, 'ether')})
+# > txpool.status
+# > miner.start()
+# > miner.stop()
+# > web3.fromWei(eth.getBalance(eth.accounts[0]), 'ether')
 ```
 
 ## Linux book
