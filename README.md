@@ -1,5 +1,14 @@
 # This is my handbook
 
+## Ethereum
+
+### geth install
+```shell
+sudo add-apt-repository ppa:ethereum/ethereum
+sudo apt-get update
+sudo apt install ethereum  
+```
+
 ## Linux book
 
 ### Linux Admin
