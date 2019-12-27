@@ -3,10 +3,60 @@
 ## Ethereum
 
 ### geth install
+
 ```shell
 sudo add-apt-repository ppa:ethereum/ethereum
 sudo apt-get update
 sudo apt install ethereum  
+```
+
+### Init node
+
+```json
+// genesis.json
+{
+ "config": {
+   "chainID": 1234,
+   "homesteadBlock": 0,
+   "eip150Block": 0,
+   "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+   "eip155Block": 0,
+   "eip158Block": 0
+ },
+ "alloc": {},
+ "difficulty": "0x4000",
+ "gasLimit": "0xffffffff",
+ "nonce": "0x0000000000000000",
+ "coinbase": "0x0000000000000000000000000000000000000000",
+ "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+ "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+ "extraData": "0x123458db4e347b1234537c1c8370e4b5ed33adb3db69cbdb7a38e1e50b1b82fa",
+ "timestamp": "0x00"
+}
+```
+
+```shell
+mkdir myethernet && cd myethernet
+geth --datadir node1 init genesis.json
+geth --datadir node1 --networkid 1234 --port 30301 --nodiscover # console
+geth --datadir node2 init genesis.json
+geth --datadir node2 --networkid 1234 --port 30302 --nodiscover
+geth attach ipc:node1/geth.ipc
+# > eth.accounts
+# > personal.newAccount("111")
+# > personal.newAccount("222")
+# > eth.coinbase
+# > miner.setEtherbase(eth.accounts[1])
+# > eth.getBalance(eth.accounts[0])
+# > miner.start()
+## Generating DAG in progress 环节要运行半天，两个epoch都要跑到percentage=100
+# > miner.stop()
+# > web3.fromWei(eth.getBalance(eth.accounts[1]), 'ether')
+# > admin.peers
+# > admin.nodeInfo
+# > admin.addPeer("enode://e65da810c663cf72447d1231989fdd0201d871d4c37fdbe3073ac9278a85f430c8844da02cbd296458a82779dd065aa58f60e5de1340f613c84c4712300c6eac@127.0.0.1:30302?discport=0")
+# > admin.peers
+# > eth.blockNumber
 ```
 
 ## Linux book
@@ -344,7 +394,9 @@ docker container run --name drone --restart always -p 3001:80 -p 8443:443 -v /va
 ```shell
 docker container run --name jenkins --restart always -p 8080:8080 -p 50000:50000 -v ~/data/jenkins:/var/jenkins_home  -d jenkins/jenkins 
 ```
+
 - Create Gitlab container 
+  
 ```shell
 docker container run --name gitlab -p 8989:80 -p 2289:22 -v ~/data/gitlab/config:/etc/gitlab -v ~/data/gitlab/logs:/var/log/gitlab -v ~/data/gitlab/data:/var/opt/gitlab -d gitlab/gitlab-ce
 ```
