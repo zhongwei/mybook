@@ -412,3 +412,9 @@ docker container run --name gitlab -p 8989:80 -p 2289:22 -v ~/data/gitlab/config
 ```shell
 docker container run --name sonic -p 1491:1491 -v ~/data/sonic/config.cfg:/etc/sonic.cfg -v ~/data/sonic/store/:/var/lib/sonic/store/ -d valeriansaliou/sonic:v1.2.0
 ```
+
+## Create ElasticSearch container
+
+```shell
+docker container run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch
+```
