@@ -175,6 +175,12 @@ sudo dpkg -i docker-ce_18.09.0~3-0~ubuntu-bionic_amd64.deb
 sudo usermod -aG docker zhongwei
 exit #退出用户，重新登录权限生效
 ```
+- 安装docker-compose
+
+```shell
+sudo curl -L https://github.com/docker/compose/releases/download/1.25.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
 
 - 安装oh-my-zsh
 
