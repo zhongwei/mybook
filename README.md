@@ -418,3 +418,12 @@ docker container run --name sonic -p 1491:1491 -v ~/data/sonic/config.cfg:/etc/s
 ```shell
 docker container run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch
 ```
+
+## Create Kafka container
+
+```shell
+docker network create k-net --driver bridge
+docker container run --name zookeeper --network k-net -e ALLOW_ANONYMOUS_LOGIN=yes -d bitnami/zookeeper
+docker container run --name kafka --network k-net -e ALLOW_PLAINTEXT_LISTENER=yes -e KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181 -d bitnami/kafka
+docker container run -it --rm --network k-net -e KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181 bitnami/kafka kafka-topics.sh --list  --zookeeper zookeeper:2181
+```
