@@ -1,5 +1,11 @@
 # This is my handbook
 
+## Operating System Development
+
+```shell
+sudo apt install qemu nasm
+```
+
 ## Ethereum
 
 ### geth install
