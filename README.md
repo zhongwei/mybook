@@ -167,10 +167,32 @@ gotty -w docker run -it --rm busybox
 - 自动安装docker
 
 ```shell
+#Ubuntu
 curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+#CentOS 8
+sudo dnf config-manager --add-repo https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/docker-ce.repo
+sudo dnf update
+sudo dnf install -y https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/8/x86_64/stable/Packages/containerd.io-1.3.7-3.1.el8.x86_64.rpm
+sudo dnf install docker-ce -y
+awk -F: '/docker/ {print $1}' /etc/group
+
+#mirror config
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+   "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn/"],
+}
+EOF
+
+#restart and check log
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+journalctl -fu docker
+
 sudo usermod -aG docker zhongwei
 exit #退出用户，重新登录权限生效
 ```
