@@ -184,7 +184,7 @@ awk -F: '/docker/ {print $1}' /etc/group
 sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
-   "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn/"],
+   "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn/"]
 }
 EOF
 
