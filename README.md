@@ -144,6 +144,7 @@ sudo hostnamectl set-hostname zhongwei-ubuntu
 ```shell
 sudo adduser zhongwei
 sudo usermod -aG sudo zhongwei
+usermod -aG wheel zhongwei #CentOS
 ```
 
 - 安装常用工具
