@@ -468,6 +468,12 @@ docker container run --name zookeeper --network k-net -e ALLOW_ANONYMOUS_LOGIN=y
 docker container run --name kafka --network k-net -e ALLOW_PLAINTEXT_LISTENER=yes -e KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181 -d bitnami/kafka
 docker container run -it --rm --network k-net -e KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181 bitnami/kafka kafka-topics.sh --list  --zookeeper zookeeper:2181
 ```
+## Create redmine container
+```shell
+docker network create rednet
+docker run -d --name mysql -p 3306:3306 --network rednet -e MYSQL_USER=redmine -e MYSQL_PASSWORD=redmine -e MYSQL_DATABASE=redmine -e MYSQL_ROOT_PASSWORD=root mysql:5.7
+docker run -d --name redmine -p 3000:3000 --network rednet -e REDMINE_DB_MYSQL=mysql -e REDMINE_DB_USERNAME=redmine -e REDMINE_DB_PASSWORD=redmine redmine
+```
 
 ## Create NSQ container
 
