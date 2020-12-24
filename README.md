@@ -263,8 +263,8 @@ echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 vi ~/.zshrc #ZSH_THEME="agnoster"
 git clone https://github.com/ryanoasis/nerd-fonts
 cd nerd-fonts && ./install.sh
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-vi ~/.zshrc #POWERLEVEL9K_MODE='nerdfont-complete' ZSH_THEME="powerlevel9k/powerlevel9k"
+git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+vi ~/.zshrc #POWERLEVEL10K_MODE='nerdfont-complete' ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 
     [nerd-fonts cheat-sheet](http://nerdfonts.com/#cheat-sheet)
