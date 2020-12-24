@@ -1,5 +1,37 @@
 # This is my handbook
 
+## kubectl
+``` shell
+kubectl api-resources
+kubectl explain ingresses
+kubectl cordon mynode
+kubectl drain mynode
+kubectl version
+kubectl cluster-info
+kubectl apply -f deploy.yaml
+kubectl delete -f deploy.yaml
+kubectl create deployment my-dep --image=busybox 
+kubectl expose rc nginx --port=80 --target-port=8000  
+kubectl scale --replicas=3 -f foo.yaml
+kubectl annotate pods foo description='my frontend'
+kubectl label --overwrite pods foo status=unhealthy 
+kubectl delete pod,service baz foo 
+kubectl delete pods,services -l name=myLabel
+kubectl delete pod foo --grace-period=0 --force
+kubectl get services                          
+kubectl get pods --all-namespaces             
+kubectl get pods -o wide                      
+kubectl get deployment my-dep                
+kubectl get deployment my-dep --watch         
+kubectl get pod my-pod -o yaml               
+kubectl get pod my-pod -l app=nginx     
+kubectl describe nodes my-node   
+kubectl describe pods my-pod   
+kubectl logs my-pod             
+kubectl exec -t -i nginx-11f5d695dd-czm6t bash
+kubectl cp /tmp/foo_dir myubuntu:/tmp/bar_dir  
+```
+
 ## Start ubuntu dev container
 
 ``` shell
