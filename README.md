@@ -116,6 +116,10 @@ geth attach ipc:node1/geth.ipc
 #### 生成证书
 
 ```shell
+sudo ssh-keygen -A #sshd 
+```
+
+```shell
 openssl req -x509 -nodes -newkey rsa:1024 -keyout private.key -out server.crt -days 365 -subj "/C=CN/ST=Shanghai/L=Shanghai/O=Global lib
 erty/OU=IT Department/CN=*"
 ```
