@@ -1,11 +1,20 @@
 # This is my handbook
 ## Vim
-- f{char}  
+- [f, F, t, T]{char} 
 - ;  
 - ,
 - \>G
 - s
-- q
+- q 
+- CR => <ESC>o
+- [a,i][w,W,s,S,p,P,],daw
+- 10Ctl-a
+- h: operator
+- dd,>>,gUgU,gUU double operator 
+- >,<,=
+- ctl-[h,w,u]
+- h: i_CTRl-o
+ 
 ## kubectl
 ``` shell
 kubectl api-resources
