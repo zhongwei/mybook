@@ -1,5 +1,11 @@
 # This is my handbook
-
+## Vim
+- f{char}  
+- ;  
+- ,
+- \>G
+- s
+- q
 ## kubectl
 ``` shell
 kubectl api-resources
