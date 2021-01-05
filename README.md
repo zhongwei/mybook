@@ -286,6 +286,13 @@ vi ~/.zshrc #POWERLEVEL10K_MODE='nerdfont-complete' ZSH_THEME="powerlevel10k/pow
     [nerd-fonts cheat-sheet](http://nerdfonts.com/#cheat-sheet)
     iTerm -> Preferences -> Profiles -> Text -> Change Font -> Non-ASCII Font -> HeavyData Nerd Font
     get_icon_names
+    
+- 安装Ubuntu桌面
+
+```shell
+apt install -y ubuntu-desktop
+apt install -y xrdp
+```
 
 - 配置powerline
 
