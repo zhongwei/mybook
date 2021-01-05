@@ -56,7 +56,7 @@ docker container run --name dimage --hostname Dev -itd zhongwei/dimage
 ## Operating System Development
 
 ```shell
-sudo apt install qemu nasm
+sudo apt install qemu qemu-kvm nasm
 ```
 
 ## Ethereum
