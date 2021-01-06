@@ -290,8 +290,10 @@ vi ~/.zshrc #POWERLEVEL10K_MODE='nerdfont-complete' ZSH_THEME="powerlevel10k/pow
 - 安装Ubuntu桌面
 
 ```shell
-apt install -y ubuntu-desktop
-apt install -y xrdp
+sudo apt install -y ubuntu-desktop
+sudo apt install -y xrdp
+sudo systemctl set-default multi-user.target
+sudo systemctl set-default graphical.target
 ```
 
 - 配置powerline
