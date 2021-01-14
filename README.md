@@ -437,6 +437,15 @@ pip3 install tensorflow
 pip3 install torch==1.3.0+cpu torchvision==0.4.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
+## tensorflow-notebook
+
+### Install
+```shell
+docker run --name tensorflow-notebook -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -d jupyter/tensorflow-notebook
+docker exec -it tensorflow-notebook sh
+jupyter notebook list
+```shell
+
 ## JupyterLab
 
 ### Install
