@@ -494,7 +494,7 @@ docker container run --name phpmyadmin --restart always -p 8033:80 -e PMA_ARBITR
 - Create postgres container and web manage tools
 ```shell
 docker container run --name postgres --restart always -p 5432:5432 -v ~/data/postgres:/var/lib/postgresql/data  -e POSTGRES_PASSWORD=zhongwei -d postgres:alpine
-docker container run --name pgadmin4 --restart always -p 8054:80  -e PGADMIN_DEFAULT_EMAIL=zhongwei99@163.com -e PGADMIN_DEFAULT_PASSWORD=zhongwei -d dpage/pgadmin4
+docker container run --name pgadmin4 --restart always -p 8054:80  -e PGADMIN_DEFAULT_EMAIL=zhongwei99@163.com -e PGADMIN_DEFAULT_PASSWORD=zhongwei -d dpage/pgadmin4:5
 ```
 
 - Create nginx container
@@ -578,4 +578,14 @@ services:
     ports:
       - "4171:4171"
 
+```
+
+## Clickhouse
+
+```shell
+docker container run --name clickhouse --ulimit nofile=262144:262144 -p 8123:8123 -p 9000:9000 -p 9009:9009 -d yandex/clickhouse-server
+docker exec -it clickhouse sh
+clickhouse-client
+show databases
+#/etc/clickhouse-server/config.xml #<listen_host>::</listen_host>
 ```
