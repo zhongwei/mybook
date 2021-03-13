@@ -583,9 +583,11 @@ services:
 ## Clickhouse
 
 ```shell
-docker container run --name clickhouse --ulimit nofile=262144:262144 -p 8123:8123 -p 9000:9000 -p 9009:9009 -d yandex/clickhouse-server
+docker container run --name clickhouse --volume=$HOME/clickhouse:/var/lib/clickhouse --ulimit nofile=262144:262144 -p 8123:8123 -p 9000:9000 -p 9009:9009 -d yandex/clickhouse-server
 docker exec -it clickhouse sh
 clickhouse-client
 show databases
 #/etc/clickhouse-server/config.xml #<listen_host>::</listen_host>
+curl https://datasets.clickhouse.tech/hits/tsv/hits_v1.tsv.xz | unxz --threads=`nproc` > hits_v1.tsv
+curl https://datasets.clickhouse.tech/visits/tsv/visits_v1.tsv.xz | unxz --threads=`nproc` > visits_v1.tsv
 ```
