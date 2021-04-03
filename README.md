@@ -128,6 +128,15 @@ geth attach ipc:node1/geth.ipc
 
 ### Linux Admin
 
+#### CentOS
+
+```shell
+cat /etc/centos-release /etc/centos-release-upstream
+vi /etc/sshd/sshd_config
+# ClientAliveInterval 60
+# ClientAliveCountMax 3
+```
+
 #### 生成证书
 
 ```shell
@@ -183,7 +192,7 @@ network:
 
 #### Linux basic config
 
-- 修改主机名
+- 修改主机名(Ubuntu)
 
 ```shell
 sudo vi /etc/cloud/cloud.cfg # preserve_hostname  value change to  true
@@ -201,8 +210,8 @@ usermod -aG wheel zhongwei #CentOS
 - 安装常用工具
 
 ```shell
-sudo apt install git curl sl nnn mc -y
-wget https://github.com/wagoodman/dive/releases/download/v0.8.1/dive_0.8.1_linux_amd64.deb
+sudo apt install git sl nnn mc -y
+wget https://github.com/wagoodman/dive/releases/download/v0.10.0/dive_0.10.0_linux_amd64.deb
 sudo dpkg -i dive_0.7.2_linux_amd64.deb
 wget https://github.com/jesseduffield/lazygit/releases/download/v0.5/lazygit_0.5_Linux_x86_64.tar.gz
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -214,6 +223,24 @@ wget https://github.com/yudai/gotty/releases/download/v2.0.0-alpha.3/gotty_2.0.0
 gotty -w docker run -it --rm busybox
 ```
 
+- 安装oh-my-zsh
+
+```shell
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo apt install fonts-powerline
+sudo dnf install powerline-fonts # CentOS
+echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
+vi ~/.zshrc #ZSH_THEME="agnoster"
+git clone https://github.com/ryanoasis/nerd-fonts
+cd nerd-fonts && ./install.sh
+git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+vi ~/.zshrc #ZSH_THEME="powerlevel10k/powerlevel10k"
+```
+
+    [nerd-fonts cheat-sheet](http://nerdfonts.com/#cheat-sheet)
+    iTerm -> Preferences -> Profiles -> Text -> Change Font -> Non-ASCII Font -> HeavyData Nerd Font
+    get_icon_names
 
 - 自动安装docker
 
@@ -227,7 +254,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 #CentOS 8
 sudo dnf config-manager --add-repo https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/docker-ce.repo
 sudo dnf update
-sudo dnf install -y https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/8/x86_64/stable/Packages/containerd.io-1.3.7-3.1.el8.x86_64.rpm
+sudo dnf install -y https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/8/x86_64/stable/Packages/containerd.io-1.4.4-3.1.el8.x86_64.rpm
 sudo dnf install docker-ce -y
 awk -F: '/docker/ {print $1}' /etc/group
 
@@ -268,24 +295,7 @@ sudo curl -L https://github.com/docker/compose/releases/download/1.25.1/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-- 安装oh-my-zsh
 
-```shell
-sudo apt install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo apt install fonts-powerline
-echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
-vi ~/.zshrc #ZSH_THEME="agnoster"
-git clone https://github.com/ryanoasis/nerd-fonts
-cd nerd-fonts && ./install.sh
-git clone https://github.com/romkatv/powerlevel10k-media
-git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
-vi ~/.zshrc #POWERLEVEL10K_MODE='nerdfont-complete' ZSH_THEME="powerlevel10k/powerlevel10k"
-```
-
-    [nerd-fonts cheat-sheet](http://nerdfonts.com/#cheat-sheet)
-    iTerm -> Preferences -> Profiles -> Text -> Change Font -> Non-ASCII Font -> HeavyData Nerd Font
-    get_icon_names
     
 - 安装Ubuntu桌面
 
