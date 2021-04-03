@@ -295,8 +295,6 @@ sudo curl -L https://github.com/docker/compose/releases/download/1.25.1/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-
-    
 - 安装Ubuntu桌面
 
 ```shell
@@ -497,6 +495,19 @@ vi /etc/my.cnf
 #######################################
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
 CREATE USER 'zhongwei'@'localhost' IDENTIFIED BY 'zhongwei';
+```
+
+## Clickhouse
+
+```shell
+sudo yum install yum-utils
+sudo rpm --import https://repo.clickhouse.tech/CLICKHOUSE-KEY.GPG
+sudo yum-config-manager --add-repo https://repo.clickhouse.tech/rpm/clickhouse.repo
+sudo yum install clickhouse-server clickhouse-client
+
+systemctl start clickhouse-server # sudo /etc/init.d/clickhouse-server start
+systemctl status clickhouse-server
+clickhouse-client
 ```
 
 ## Docker book
