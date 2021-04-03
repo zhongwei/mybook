@@ -424,6 +424,7 @@ git clone https://github.com/zhongwei/.spacemacs.d ~/.spacemacs.d
 ## Python
 
 ```shell
+sudo dnf install python3 python3-devel -y #CentOS 8.x
 # $HOME/.config/pip/pip.conf
 [global]
 index-url = https://mirrors.ustc.edu.cn/pypi/web/simple
@@ -436,7 +437,7 @@ sudo apt install python3-pip -y
 ### Install
 
 ```shell
-pip3 install tensorflow
+pip3 install --user tensorflow
 ```
 
 ## Pytorch
