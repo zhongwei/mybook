@@ -467,6 +467,37 @@ pip3 install --user jupyterlab
 vi ~/.zprofile # 添加~/.local/bin到PATH变量
 jupyter lab --ip=10.105.201.248
 ```
+## MySQL
+
+```shell
+wget https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
+sudo yum install mysql80-community-release-el8-1.noarch.rpm
+yum repolist enabled | grep "mysql.*-community.*"
+sudo yum-config-manager --enable mysql80-community # sudo dnf config-manager --enable mysql80-community
+yum repolist all | grep mysql
+sudo yum module disable mysql
+cat /etc/yum.repos.d/mysql-community.repo 
+sudo yum install mysql-community-server
+systemctl start mysqld
+systemctl status mysqld
+sudo grep 'temporary password' /var/log/mysqld.log
+mysql -uroot -p
+ALTER USER 'root'@'localhost' IDENTIFIED BY '@Test123';
+show variables like 'validate_password%';
+set global validate_password.policy=0;
+mysql --help|grep my.cnf
+vi /etc/my.cnf 
+####################################
+#validate_password.check_user_name=OFF
+#validate_password.length=4
+#validate_password.mixed_case_count=0
+#validate_password.number_count=0
+#validate_password.policy=0
+#validate_password.special_char_count=0
+#######################################
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
+CREATE USER 'zhongwei'@'localhost' IDENTIFIED BY 'zhongwei';
+```
 
 ## Docker book
 
