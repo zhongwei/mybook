@@ -365,6 +365,7 @@ git clone https://github.com/tonsky/FiraCode
 - Install Nodejs
 
 ```shell
+sudo dnf module install nodejs:14 #CentOS
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 npm config set registry https://registry.npm.taobao.org
@@ -462,8 +463,8 @@ jupyter notebook list
 ### Install
 
 ```shell
-pip3 install jupyterlab
-vi ~/.zprofile # 添加./local/bin到PATH变量
+pip3 install --user jupyterlab
+vi ~/.zprofile # 添加~/.local/bin到PATH变量
 jupyter lab --ip=10.105.201.248
 ```
 
