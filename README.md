@@ -465,6 +465,18 @@ pip3 install --user jupyterlab
 vi ~/.zprofile # 添加~/.local/bin到PATH变量
 jupyter lab --ip=10.105.201.248
 ```
+
+## Redis
+
+```shell
+sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
+dnf module list | grep redis
+sudo dnf module install redis:remi-6.2 -y
+sudo systemctl enable redis.service 
+sudo systemctl start redis.service 
+vi /etc/redis.conf 
+```
+
 ## MySQL
 
 ```shell
