@@ -135,6 +135,16 @@ cat /etc/centos-release /etc/centos-release-upstream
 vi /etc/sshd/sshd_config
 # ClientAliveInterval 60
 # ClientAliveCountMax 3
+
+# Chinese dir name display
+sudo yum install langpacks-zh_CN.noarch
+vim /etc/locale.conf
+# LANG=“zh_CN.UTF-8”
+source /etc/locale.conf
+vi ./.zshrc
+# export LC_ALL="zh_CN.UTF-8"
+# export LANG="zh_CN.UTF-8"
+$source ./.zshrc
 ```
 
 #### 生成证书
