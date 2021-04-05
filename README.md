@@ -433,7 +433,7 @@ git clone https://github.com/zhongwei/.spacemacs.d ~/.spacemacs.d
 ## Python
 
 ```shell
-sudo dnf install python3 python3-devel -y #CentOS 8.x
+sudo dnf install python38 python38-devel -y #CentOS 8.x
 # $HOME/.config/pip/pip.conf
 [global]
 index-url = https://mirrors.ustc.edu.cn/pypi/web/simple
