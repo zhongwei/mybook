@@ -1,4 +1,14 @@
 # This is my handbook
+## superset
+
+```shell
+git clone https://github.com/apache/superset.git
+cd superset
+docker-compose -f docker-compose-non-dev.yml up
+open http://localhost:8088
+# username: admin password: admin
+```
+
 ## Vim
 - [f, F, t, T]{char} 
 - ;  
