@@ -9,6 +9,12 @@ open http://localhost:8088
 # username: admin password: admin
 ```
 
+## Git
+
+```shell
+git clone git@github.com:zhongwei/english
+```
+
 ## Vim
 - [f, F, t, T]{char} 
 - ;  
