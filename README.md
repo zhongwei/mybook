@@ -1,4 +1,61 @@
 # This is my handbook
+
+## Firecracker
+
+### Downloads
+
+- [Getting Started with Firecracker](https://github.com/firecracker-microvm/firecracker/blob/main/docs/getting-started.md)
+- [firecracker](https://github.com/firecracker-microvm/firecracker/releases)
+- [kernel](https://s3.amazonaws.com/spec.ccfc.min/img/quickstart_guide/x86_64/kernels/vmlinux.bin)
+- [rootfs](https://s3.amazonaws.com/spec.ccfc.min/img/quickstart_guide/x86_64/rootfs/bionic.rootfs.ext4)
+
+### Start firecracker
+
+```shell
+./firecracker --api-sock /tmp/firecracker.socket
+```
+
+### Set the guest kernel 
+
+```shell
+ curl --unix-socket /tmp/firecracker.socket -i \
+      -X PUT 'http://localhost/boot-source'   \
+      -H 'Accept: application/json'           \
+      -H 'Content-Type: application/json'     \
+      -d "{
+            \"kernel_image_path\": \"vmlinux.bin\",
+            \"boot_args\": \"console=ttyS0 reboot=k panic=1 pci=off\"
+       }"
+
+```
+### Set the guest rootfs
+
+```shell
+curl --unix-socket /tmp/firecracker.socket -i \                                                                                                           
+  -X PUT 'http://localhost/drives/rootfs' \
+  -H 'Accept: application/json'           \
+  -H 'Content-Type: application/json'     \
+  -d "{
+        \"drive_id\": \"rootfs\",   
+        \"path_on_host\": \"bionic.rootfs.ext4\",
+        \"is_root_device\": true,
+        \"is_read_only\": false
+   }"
+
+```
+
+### Start the guest machine
+
+```shell
+curl --unix-socket /tmp/firecracker.socket -i \                                                                                                           
+  -X PUT 'http://localhost/actions'       \
+  -H  'Accept: application/json'          \
+  -H  'Content-Type: application/json'    \
+  -d '{
+      "action_type": "InstanceStart"
+   }'
+```
+
 ## superset
 
 ```shell
