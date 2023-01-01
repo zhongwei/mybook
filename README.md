@@ -1,5 +1,12 @@
 # This is my handbook
 
+## ssh
+```shell
+nohup ssh -qTfnN -D 127.0.0.1:38080 root@1.1.1.1 "vmstat 10" 2>&1 >/dev/null &
+# add  k8s.gcr.io 127.0,0.1 to /etc/hosts
+sudo ssh -L 443:108.177.125.82:443 root@1.1.1.1 //Local 443，forword remote 108.177.125.82:443
+```
+
 ## Firecracker
 
 ### Downloads
